@@ -1,0 +1,45 @@
+---
+title: "기초R 팀프로젝트(R을 이용한 인디언 포커)"
+author: "20173204 곽명빈, 20173230 민형기, 20153307 김예솔"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 인디언 포커 
+```{r}
+rm(list = ls())
+
+"1번 승리자" <- "w1" 
+"2번 승리자" <- "w2"  
+"무효" <- "0"
+
+card1 <- 1:10
+card2 <- 1:10
+
+indian <- function() { 
+  a <- head(sample(card1),1)
+  b <- head(sample(card2),1)
+  if (a > b) { 
+    Sys.sleep(1)
+    print(a)
+    print(b)
+    print("w1") 
+  } else if (a < b) {
+    Sys.sleep(1)
+    print(a)
+    print(b)
+    print("w2") 
+  } else { 
+    print(a)
+    print(b)
+    print("0") 
+  }
+}
+
+table(replicate(5, indian()))
+``` 
+
