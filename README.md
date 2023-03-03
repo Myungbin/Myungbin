@@ -17,7 +17,7 @@ class MyungBin:
 
     def skill(self, tool):
         if tool == "Python":
-            skill = ["Pytorch", "tensorflow", "scikit-learn"]
+            skill = ["Pytorch", "Tensorflow", "scikit-learn"]
         else:
             skill = ["statistical analysis"]
         return skill
